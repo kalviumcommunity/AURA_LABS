@@ -2,10 +2,12 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import dotenv from "dotenv";
+dotenv.config()
 import mongoose from "mongoose";
 import authRoutes from "./routes/auth.js";
+import recommendationRoutes from "./routes/recommendationRoutes.js";
+console.log("GEMINI KEY IN SERVER.JS:", process.env.GEMINI_API_KEY);
 
-dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -17,6 +19,7 @@ app.use(morgan("dev"));
 
 // Routes
 app.use("/auth", authRoutes);
+app.use("/api/recommendations", recommendationRoutes);
 
 app.get("/", (req, res) => {
   res.json({ name: "Aura Backend", status: "running" });

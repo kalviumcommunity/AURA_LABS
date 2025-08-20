@@ -1,0 +1,605 @@
+[
+    {
+      "id": "1",
+      "name": "Indian Institute of Technology Bombay",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "programs_offered": ["Engineering", "Sciences", "Design", "Management"],
+      "annual_fees": "₹2,36,000 (BTech 1st yr)",
+      "placement_rate": "90%",
+      "median_package": "₹23.5L",
+      "exams_accepted": ["JEE Advanced", "UCEED", "GATE", "CAT"],
+      "min_percentile_required": "98+ JEE Adv. (GEN)",
+      "min_12th_score_required": "75% PCM",
+      "official_page": "https://www.iitb.ac.in",
+      "scores": {
+        "placement": 9.5,
+        "campus_life": 9.0,
+        "research": 9.8,
+        "peers": 9.7
+      }
+    },
+    {
+      "id": "2",
+      "name": "Indian Institute of Technology Delhi",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "programs_offered": ["Engineering", "Sciences", "Management"],
+      "annual_fees": "₹2,20,000 (BTech 1st yr)",
+      "placement_rate": "94%",
+      "median_package": "₹23L",
+      "exams_accepted": ["JEE Advanced", "GATE", "CAT"],
+      "min_percentile_required": "98+ JEE Adv. (GEN)",
+      "min_12th_score_required": "75% PCM",
+      "official_page": "https://home.iitd.ac.in",
+      "scores": {
+        "placement": 9.4,
+        "campus_life": 8.8,
+        "research": 9.7,
+        "peers": 9.6
+      }
+    },
+    {
+      "id": "3",
+      "name": "Indian Institute of Technology Madras",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "programs_offered": ["Engineering", "Sciences", "Management"],
+      "annual_fees": "₹2,10,000 (BTech 1st yr)",
+      "placement_rate": "95%",
+      "median_package": "₹21.5L",
+      "exams_accepted": ["JEE Advanced", "GATE", "CAT"],
+      "min_percentile_required": "98+ JEE Adv.",
+      "min_12th_score_required": "75% PCM",
+      "official_page": "https://www.iitm.ac.in",
+      "scores": {
+        "placement": 9.5,
+        "campus_life": 9.2,
+        "research": 9.6,
+        "peers": 9.5
+      }
+    },
+    {
+      "id": "4",
+      "name": "Indian Institute of Technology Kanpur",
+      "city": "Kanpur",
+      "state": "Uttar Pradesh",
+      "programs_offered": ["Engineering", "Sciences", "Management"],
+      "annual_fees": "₹2,00,000 (BTech 1st yr)",
+      "placement_rate": "90%",
+      "median_package": "₹18.2L",
+      "exams_accepted": ["JEE Advanced", "GATE", "CAT"],
+      "min_percentile_required": "98+ JEE Adv.",
+      "min_12th_score_required": "75% PCM",
+      "official_page": "https://www.iitk.ac.in",
+      "scores": {
+        "placement": 9.4,
+        "campus_life": 8.8,
+        "research": 9.7,
+        "peers": 9.5
+      }
+    },
+    {
+      "id": "5",
+      "name": "All India Institute of Medical Sciences Delhi",
+      "city": "New Delhi",
+      "state": "Delhi NCR",
+      "programs_offered": ["Medicine", "Nursing", "Health Sciences"],
+      "annual_fees": "₹1,628",
+      "placement_rate": "95%",
+      "median_package": "₹15L",
+      "exams_accepted": ["NEET-UG"],
+      "min_percentile_required": "99+ NEET",
+      "min_12th_score_required": "60% PCB",
+      "official_page": "https://www.aiims.edu",
+      "scores": {
+        "placement": 9.7,
+        "campus_life": 9.2,
+        "research": 9.9,
+        "peers": 9.8
+      }
+    },
+    {
+      "id": "6",
+      "name": "National Institute of Technology Tiruchirappalli",
+      "city": "Tiruchirappalli",
+      "state": "Tamil Nadu",
+      "programs_offered": ["Engineering", "Sciences"],
+      "annual_fees": "₹1,61,050",
+      "placement_rate": "90%",
+      "median_package": "₹13.5L",
+      "exams_accepted": ["JEE Main", "GATE"],
+      "min_percentile_required": "99+ JEE Main",
+      "min_12th_score_required": "75% PCM",
+      "official_page": "https://www.nitt.edu",
+      "scores": {
+        "placement": 8.8,
+        "campus_life": 8.2,
+        "research": 8.8,
+        "peers": 9.0
+      }
+    },
+    {
+      "id": "7",
+      "name": "Birla Institute of Technology, Mesra",
+      "city": "Ranchi",
+      "state": "Jharkhand",
+      "programs_offered": ["Engineering", "Sciences", "Business"],
+      "annual_fees": "₹2,89,000",
+      "placement_rate": "86%",
+      "median_package": "₹13L",
+      "exams_accepted": ["JEE Main", "GATE", "CAT"],
+      "min_percentile_required": "95+ JEE Main",
+      "min_12th_score_required": "60% PCM",
+      "official_page": "https://www.bitmesra.ac.in",
+      "scores": {
+        "placement": 8.1,
+        "campus_life": 8.2,
+        "research": 7.9,
+        "peers": 8.3
+      }
+    },
+    {
+      "id": "8",
+      "name": "BITS Pilani",
+      "city": "Pilani",
+      "state": "Rajasthan",
+      "programs_offered": ["Engineering", "Sciences", "Management", "Pharmacy"],
+      "annual_fees": "₹6,38,175",
+      "placement_rate": "91%",
+      "median_package": "₹22L",
+      "exams_accepted": ["BITSAT"],
+      "min_percentile_required": "220+ BITSAT",
+      "min_12th_score_required": "75% PCM",
+      "official_page": "https://www.bits-pilani.ac.in",
+      "scores": {
+        "placement": 9.2,
+        "campus_life": 9.2,
+        "research": 8.5,
+        "peers": 9.5
+      }
+    },
+    {
+      "id": "9",
+      "name": "Vellore Institute of Technology",
+      "city": "Vellore",
+      "state": "Tamil Nadu",
+      "programs_offered": ["Engineering", "Sciences", "Business"],
+      "annual_fees": "₹1,98,000",
+      "placement_rate": "90%",
+      "median_package": "₹8.19L",
+      "exams_accepted": ["VITEEE", "JEE Main"],
+      "min_percentile_required": "85+ VITEEE",
+      "min_12th_score_required": "60% PCM",
+      "official_page": "https://vit.ac.in",
+      "scores": {
+        "placement": 8.9,
+        "campus_life": 9.0,
+        "research": 7.7,
+        "peers": 8.6
+      }
+    },
+    {
+      "id": "10",
+      "name": "Manipal Academy of Higher Education",
+      "city": "Manipal",
+      "state": "Karnataka",
+      "programs_offered": ["Engineering", "Medicine", "Management", "Sciences"],
+      "annual_fees": "₹3,65,000",
+      "placement_rate": "85%",
+      "median_package": "₹8.5L",
+      "exams_accepted": ["Manipal MET", "NEET-UG", "NATA"],
+      "min_percentile_required": "85+ MET",
+      "min_12th_score_required": "60%",
+      "official_page": "https://manipal.edu",
+      "scores": {
+        "placement": 8.5,
+        "campus_life": 8.6,
+        "research": 8.2,
+        "peers": 8.5
+      }
+    },
+    {
+      "id": "11",
+      "name": "Amity University Noida",
+      "city": "Noida",
+      "state": "Uttar Pradesh",
+      "programs_offered": ["Engineering", "Law", "Business", "Sciences", "Arts"],
+      "annual_fees": "₹3-5L (average)",
+      "placement_rate": "80%",
+      "median_package": "₹6.45L",
+      "exams_accepted": ["Amity Entrance Exam", "JEE Main", "CUET-UG"],
+      "min_percentile_required": "80+ (varies)",
+      "min_12th_score_required": "60%",
+      "official_page": "https://www.amity.edu",
+      "scores": {
+        "placement": 7.0,
+        "campus_life": 8.5,
+        "research": 6.5,
+        "peers": 7.8
+      }
+    },
+    {
+      "id": "12",
+      "name": "SRM Institute of Science and Technology",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "programs_offered": ["Engineering", "Management", "Medicine", "Sciences"],
+      "annual_fees": "₹2,50,000",
+      "placement_rate": "90%",
+      "median_package": "₹7.7L",
+      "exams_accepted": ["SRMJEEE", "NEET-UG"],
+      "min_percentile_required": "80+ SRMJEEE",
+      "min_12th_score_required": "60% PCM",
+      "official_page": "https://www.srmist.edu.in",
+      "scores": {
+        "placement": 8.4,
+        "campus_life": 8.0,
+        "research": 7.6,
+        "peers": 8.0
+      }
+    },
+    {
+      "id": "13",
+      "name": "Shiv Nadar University",
+      "city": "Greater Noida",
+      "state": "Uttar Pradesh",
+      "programs_offered": ["Engineering", "Sciences", "Humanities", "Management"],
+      "annual_fees": "₹2.5L-4L",
+      "placement_rate": "88%",
+      "median_package": "₹10.8L",
+      "exams_accepted": ["SNUSAT", "JEE Main"],
+      "min_percentile_required": "80+",
+      "min_12th_score_required": "70%",
+      "official_page": "https://snu.edu.in",
+      "scores": {
+        "placement": 8.2,
+        "campus_life": 9.0,
+        "research": 8.0,
+        "peers": 8.5
+      }
+    },
+    {
+      "id": "14",
+      "name": "Lovely Professional University",
+      "city": "Phagwara",
+      "state": "Punjab",
+      "programs_offered": ["Engineering", "Management", "Law", "Sciences", "Design"],
+      "annual_fees": "₹2L-3L",
+      "placement_rate": "82%",
+      "median_package": "₹7.2L",
+      "exams_accepted": ["LPUNEST", "JEE Main", "CUET-UG"],
+      "min_percentile_required": "70+",
+      "min_12th_score_required": "60%",
+      "official_page": "https://www.lpu.in",
+      "scores": {
+        "placement": 8.0,
+        "campus_life": 8.7,
+        "research": 7.0,
+        "peers": 7.5
+      }
+    },
+    {
+      "id": "15",
+      "name": "Aligarh Muslim University",
+      "city": "Aligarh",
+      "state": "Uttar Pradesh",
+      "programs_offered": ["Engineering", "Law", "Medicine", "Sciences", "Arts"],
+      "annual_fees": "₹10,000-15,000",
+      "placement_rate": "80%",
+      "median_package": "₹6.4L",
+      "exams_accepted": ["CUET-UG", "NEET-UG"],
+      "min_percentile_required": "CUET 90+",
+      "min_12th_score_required": "60%",
+      "official_page": "https://www.amu.ac.in",
+      "scores": {
+        "placement": 7.2,
+        "campus_life": 8.2,
+        "research": 7.9,
+        "peers": 7.7
+      }
+    },
+    {
+      "id": "16",
+      "name": "Jawaharlal Nehru University",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "programs_offered": ["Arts", "Sciences", "Languages", "Social Sciences", "Law"],
+      "annual_fees": "₹1,100",
+      "placement_rate": "70%",
+      "median_package": "₹11L (top PGs)",
+      "exams_accepted": ["CUET-UG", "CUET-PG"],
+      "min_percentile_required": "CUET 97+",
+      "min_12th_score_required": "60%",
+      "official_page": "https://www.jnu.ac.in",
+      "scores": {
+        "placement": 7.7,
+        "campus_life": 9.0,
+        "research": 9.2,
+        "peers": 8.9
+      }
+    },
+    {
+      "id": "17",
+      "name": "Jadavpur University",
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "programs_offered": ["Engineering", "Arts", "Sciences"],
+      "annual_fees": "₹2,400",
+      "placement_rate": "95%",
+      "median_package": "₹9.1L",
+      "exams_accepted": ["WBJEE", "CUET-UG"],
+      "min_percentile_required": "WBJEE 99+",
+      "min_12th_score_required": "60%",
+      "official_page": "https://www.jaduniv.edu.in",
+      "scores": {
+        "placement": 9.3,
+        "campus_life": 8.5,
+        "research": 9.0,
+        "peers": 9.2
+      }
+    },
+    {
+      "id": "18",
+      "name": "Amrita Vishwa Vidyapeetham",
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "programs_offered": ["Engineering", "Sciences", "Medicine", "Business"],
+      "annual_fees": "₹2L-4.5L",
+      "placement_rate": "89%",
+      "median_package": "₹10.2L",
+      "exams_accepted": ["AEEE", "NEET-UG", "JEE Main"],
+      "min_percentile_required": "AEEE 80+",
+      "min_12th_score_required": "60%",
+      "official_page": "https://www.amrita.edu",
+      "scores": {
+        "placement": 8.7,
+        "campus_life": 8.9,
+        "research": 8.6,
+        "peers": 8.8
+      }
+    },
+    {
+      "id": "19",
+      "name": "National Law School of India University Bangalore",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "programs_offered": ["Law (BA LLB, LLM, MPP, PhD)"],
+      "annual_fees": "₹2,92,000 (BA LLB 1st yr)",
+      "placement_rate": "95%",
+      "median_package": "₹18L",
+      "exams_accepted": ["CLAT UG", "CLAT PG"],
+      "min_percentile_required": "CLAT AIR <100",
+      "min_12th_score_required": "45%",
+      "official_page": "https://www.nls.ac.in",
+      "scores": {
+        "placement": 9.6,
+        "campus_life": 9.3,
+        "research": 9.2,
+        "peers": 9.5
+      }
+    },
+    {
+      "id": "20",
+      "name": "National Institute of Design Ahmedabad",
+      "city": "Ahmedabad",
+      "state": "Gujarat",
+      "programs_offered": ["Design - Industrial, Communication, IT, Textile"],
+      "annual_fees": "₹2,80,000",
+      "placement_rate": "89%",
+      "median_package": "₹8L",
+      "exams_accepted": ["NID DAT (UG/PG)"],
+      "min_percentile_required": "Top 5-10% in DAT",
+      "min_12th_score_required": "60%",
+      "official_page": "https://www.nid.edu",
+      "scores": {
+        "placement": 8.4,
+        "campus_life": 9.0,
+        "research": 7.3,
+        "peers": 8.6
+      }
+    },
+    [
+        {
+          "id": "21",
+          "name": "Symbiosis International University",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "programs_offered": ["Management", "Law", "Engineering", "Design", "Health Sciences"],
+          "annual_fees": "₹2-5L (varies by program)",
+          "placement_rate": "85%",
+          "median_package": "₹9L",
+          "exams_accepted": ["SNAP", "SLAT", "JEE Main"],
+          "min_percentile_required": "85+ (varies)",
+          "min_12th_score_required": "60%",
+          "official_page": "https://www.symbiosis.ac.in",
+          "scores": {
+            "placement": 8.3,
+            "campus_life": 8.7,
+            "research": 7.9,
+            "peers": 8.2
+          }
+        },
+        {
+          "id": "22",
+          "name": "Shiv Nadar University",
+          "city": "Greater Noida",
+          "state": "Uttar Pradesh",
+          "programs_offered": ["Engineering", "Sciences", "Humanities", "Management"],
+          "annual_fees": "₹2.5L-4L",
+          "placement_rate": "88%",
+          "median_package": "₹10.8L",
+          "exams_accepted": ["SNUSAT", "JEE Main"],
+          "min_percentile_required": "80+",
+          "min_12th_score_required": "70%",
+          "official_page": "https://snu.edu.in",
+          "scores": {
+            "placement": 8.2,
+            "campus_life": 9.0,
+            "research": 8.0,
+            "peers": 8.5
+          }
+        },
+        {
+          "id": "23",
+          "name": "OP Jindal Global University",
+          "city": "Sonipat",
+          "state": "Haryana",
+          "programs_offered": ["Law", "Business", "Social Sciences", "Humanities"],
+          "annual_fees": "₹6-12L",
+          "placement_rate": "82%",
+          "median_package": "₹10L",
+          "exams_accepted": ["OJEE", "UGCNET"],
+          "min_percentile_required": "80+",
+          "min_12th_score_required": "65%",
+          "official_page": "https://jgu.edu.in",
+          "scores": {
+            "placement": 7.9,
+            "campus_life": 8.3,
+            "research": 7.8,
+            "peers": 8.1
+          }
+        },
+        {
+          "id": "24",
+          "name": "Ashoka University",
+          "city": "Sonipat",
+          "state": "Haryana",
+          "programs_offered": ["Liberal Arts", "Economics", "Computer Science", "Humanities", "Social Sciences"],
+          "annual_fees": "₹9L",
+          "placement_rate": "85%",
+          "median_package": "₹12L",
+          "exams_accepted": ["Ashoka Aptitude Test", "SAT", "CUET"],
+          "min_percentile_required": "SAT 1350+, CUET 95+",
+          "min_12th_score_required": "80%",
+          "official_page": "https://www.ashoka.edu.in",
+          "scores": {
+            "placement": 8.4,
+            "campus_life": 9.1,
+            "research": 7.4,
+            "peers": 8.7
+          }
+        },
+        {
+          "id": "25",
+          "name": "Narsee Monjee Institute of Management Studies (NMIMS)",
+          "city": "Mumbai",
+          "state": "Maharashtra",
+          "programs_offered": ["Management", "Engineering", "Commerce", "Economics"],
+          "annual_fees": "₹3-6L",
+          "placement_rate": "88%",
+          "median_package": "₹16L",
+          "exams_accepted": ["NMAT", "CAT"],
+          "min_percentile_required": "90+",
+          "min_12th_score_required": "70%",
+          "official_page": "https://www.nmims.edu",
+          "scores": {
+            "placement": 8.5,
+            "campus_life": 8.6,
+            "research": 7.9,
+            "peers": 8.7
+          }
+        },
+        {
+          "id": "26",
+          "name": "Krea University",
+          "city": "Sri City",
+          "state": "Andhra Pradesh",
+          "programs_offered": ["Liberal Arts", "Sciences", "Business", "Social Sciences"],
+          "annual_fees": "₹7L",
+          "placement_rate": "75%",
+          "median_package": "₹8L",
+          "exams_accepted": ["Krea Admission Test", "SAT", "CUET"],
+          "min_percentile_required": "85+",
+          "min_12th_score_required": "70%",
+          "official_page": "https://www.krea.edu.in",
+          "scores": {
+            "placement": 7.5,
+            "campus_life": 8.3,
+            "research": 7.0,
+            "peers": 7.9
+          }
+        },
+        {
+          "id": "27",
+          "name": "NMIMS Mukesh Patel School of Technology Management & Engineering",
+          "city": "Mumbai",
+          "state": "Maharashtra",
+          "programs_offered": ["Engineering", "Management"],
+          "annual_fees": "₹7-9L",
+          "placement_rate": "85%",
+          "median_package": "₹12-14L",
+          "exams_accepted": ["NMAT", "GATE"],
+          "min_percentile_required": "80+",
+          "min_12th_score_required": "65%",
+          "official_page": "https://engineering.nmims.edu",
+          "scores": {
+            "placement": 8.1,
+            "campus_life": 8.0,
+            "research": 7.8,
+            "peers": 8.2
+          }
+        },
+        {
+          "id": "28",
+          "name": "Indian Institute of Science Education and Research Pune",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "programs_offered": ["Science", "Research"],
+          "annual_fees": "₹2,00,000 approx.",
+          "placement_rate": "80%",
+          "median_package": "₹15L (research/academia)",
+          "exams_accepted": ["IISER Aptitude Test"],
+          "min_percentile_required": "Top 5%",
+          "min_12th_score_required": "80% PCM",
+          "official_page": "https://www.iiserpune.ac.in",
+          "scores": {
+            "placement": 8.0,
+            "campus_life": 8.5,
+            "research": 9.5,
+            "peers": 8.7
+          }
+        },
+        {
+          "id": "29",
+          "name": "Indian Institute of Science Education and Research Kolkata",
+          "city": "Kolkata",
+          "state": "West Bengal",
+          "programs_offered": ["Science", "Research"],
+          "annual_fees": "₹1,80,000 approx.",
+          "placement_rate": "75%",
+          "median_package": "₹13L (research/academia)",
+          "exams_accepted": ["IISER Aptitude Test"],
+          "min_percentile_required": "Top 5%",
+          "min_12th_score_required": "80% PCM",
+          "official_page": "https://www.iiserkol.ac.in",
+          "scores": {
+            "placement": 7.8,
+            "campus_life": 8.1,
+            "research": 9.3,
+            "peers": 8.6
+          }
+        },
+        {
+          "id": "30",
+          "name": "Indian Institute of Science Education and Research Mohali",
+          "city": "Mohali",
+          "state": "Punjab",
+          "programs_offered": ["Science", "Research"],
+          "annual_fees": "₹1,50,000 approx.",
+          "placement_rate": "78%",
+          "median_package": "₹14L (research/academia)",
+          "exams_accepted": ["IISER Aptitude Test"],
+          "min_percentile_required": "Top 5%",
+          "min_12th_score_required": "80% PCM",
+          "official_page": "https://www.iisermohali.ac.in",
+          "scores": {
+            "placement": 7.9,
+            "campus_life": 8.0,
+            "research": 9.4,
+            "peers": 8.5
+          }
+        }
+      ]
+  ]
+  
