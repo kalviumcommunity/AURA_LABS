@@ -169,4 +169,4 @@ For the remaining universities, a matchScore is calculated to determine the best
 3.  *Factors Score:* This is the most heavily weighted component. A score is calculated based on the university's ratings for the factors the user deemed most important.
     * Example Formula: If a user prioritizes placement and campus_life:
         factorScore = (university.scores.placement * 0.6) + (university.scores.campus_life * 0.4)
-4.  *Final Score:* The scores are combined into a final percentage. The list is then sorted in descending order of matchScore and the top results are returned to the user.
+4.  *Final Score:* The scores are combined into a final percentage. The list is then sorted in descending order of matchScore and the top results are returned to the user
