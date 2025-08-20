@@ -170,3 +170,4 @@ For the remaining universities, a matchScore is calculated to determine the best
     * Example Formula: If a user prioritizes placement and campus_life:
         factorScore = (university.scores.placement * 0.6) + (university.scores.campus_life * 0.4)
 4.  *Final Score:* The scores are combined into a final percentage. The list is then sorted in descending order of matchScore and the top results are returned to the user.
+
