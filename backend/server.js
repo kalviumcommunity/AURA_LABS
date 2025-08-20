@@ -6,6 +6,7 @@ dotenv.config()
 import mongoose from "mongoose";
 import authRoutes from "./routes/auth.js";
 import recommendationRoutes from "./routes/recommendationRoutes.js";
+import metadataRoutes from "./routes/metadataRoutes.js";
 console.log("GEMINI KEY IN SERVER.JS:", process.env.GEMINI_API_KEY);
 
 
@@ -20,6 +21,7 @@ app.use(morgan("dev"));
 // Routes
 app.use("/auth", authRoutes);
 app.use("/api/recommendations", recommendationRoutes);
+app.use("/api/metadata", metadataRoutes);
 
 app.get("/", (req, res) => {
   res.json({ name: "Aura Backend", status: "running" });

@@ -13,25 +13,6 @@ export default function QuestionnairePage() {
   const { user } = useAuth()
   const router = useRouter()
 
-  if (!user) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center px-4">
-        <Card className="w-full max-w-md">
-          <CardHeader className="text-center">
-            <GraduationCap className="h-12 w-12 text-primary mx-auto mb-4" />
-            <CardTitle>Sign In Required</CardTitle>
-            <CardDescription>Please sign in to access the smart assessment questionnaire</CardDescription>
-          </CardHeader>
-          <CardContent className="text-center">
-            <Link href="/signup">
-              <Button>Sign Up to Get Started</Button>
-            </Link>
-          </CardContent>
-        </Card>
-      </div>
-    )
-  }
-
   return (
     <QuestionnaireProvider>
       <div className="min-h-screen bg-background">
@@ -48,10 +29,20 @@ export default function QuestionnairePage() {
                   <span className="text-lg font-semibold text-foreground">FuturePath</span>
                 </div>
               </div>
-              <div className="text-sm text-muted-foreground">Welcome, {user.name}</div>
+              <div className="text-sm text-muted-foreground">Welcome{user ? `, ${user.name}` : "!"}</div>
             </div>
           </div>
         </header>
+
+        {!user && (
+          <div className="container mx-auto px-4 mt-4">
+            <Card className="bg-muted/30">
+              <CardContent className="py-3 text-sm text-muted-foreground">
+                You can fill the questionnaire without signing in. Sign in later to save your progress.
+              </CardContent>
+            </Card>
+          </div>
+        )}
 
         <QuestionnaireWizard />
       </div>

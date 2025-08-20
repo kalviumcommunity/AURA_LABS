@@ -11,9 +11,7 @@ export function EducationStep() {
   const { data, updateData, setCurrentStep } = useQuestionnaire()
 
   const handleNext = () => {
-    if (data.educationLevel && data.stream && data.completionYear && data.percentage) {
-      setCurrentStep(3)
-    }
+    setCurrentStep(3)
   }
 
   const handlePrevious = () => {
@@ -37,7 +35,13 @@ export function EducationStep() {
             onValueChange={(value) => updateData({ educationLevel: value as any })}
             className="space-y-3"
           >
-            <div className="flex items-center space-x-3 p-4 border border-blue-200 bg-blue-50 rounded-lg">
+            <div
+              role="button"
+              onClick={() => updateData({ educationLevel: "grade12" as any })}
+              className={`flex items-center space-x-3 p-4 rounded-lg cursor-pointer border transition-colors ${
+                data.educationLevel === "grade12" ? "border-blue-500 bg-blue-50" : "border-gray-200 hover:bg-gray-50"
+              }`}
+            >
               <RadioGroupItem value="grade12" id="grade12" />
               <div>
                 <Label htmlFor="grade12" className="font-medium">
@@ -46,7 +50,13 @@ export function EducationStep() {
                 <p className="text-sm text-gray-600">Completed 12th standard/Class XII</p>
               </div>
             </div>
-            <div className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg">
+            <div
+              role="button"
+              onClick={() => updateData({ educationLevel: "diploma" as any })}
+              className={`flex items-center space-x-3 p-4 rounded-lg cursor-pointer border transition-colors ${
+                data.educationLevel === "diploma" ? "border-blue-500 bg-blue-50" : "border-gray-200 hover:bg-gray-50"
+              }`}
+            >
               <RadioGroupItem value="diploma" id="diploma" />
               <div>
                 <Label htmlFor="diploma" className="font-medium">
@@ -55,7 +65,13 @@ export function EducationStep() {
                 <p className="text-sm text-gray-600">Completed Diploma course</p>
               </div>
             </div>
-            <div className="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg">
+            <div
+              role="button"
+              onClick={() => updateData({ educationLevel: "equivalent" as any })}
+              className={`flex items-center space-x-3 p-4 rounded-lg cursor-pointer border transition-colors ${
+                data.educationLevel === "equivalent" ? "border-blue-500 bg-blue-50" : "border-gray-200 hover:bg-gray-50"
+              }`}
+            >
               <RadioGroupItem value="equivalent" id="equivalent" />
               <div>
                 <Label htmlFor="equivalent" className="font-medium">
@@ -71,19 +87,38 @@ export function EducationStep() {
           <Label className="text-sm font-medium text-gray-700">Stream/Specialization</Label>
           <RadioGroup value={data.stream} onValueChange={(value) => updateData({ stream: value as any })}>
             <div className="grid grid-cols-2 gap-4">
-              <div className="flex items-center space-x-3 p-3 border border-blue-200 bg-blue-50 rounded-lg">
+              <div
+                role="button"
+                onClick={() => updateData({ stream: "science" as any })}
+                className={`flex items-center space-x-3 p-3 rounded-lg cursor-pointer border transition-colors ${
+                  data.stream === "science" ? "border-blue-500 bg-blue-50" : "border-gray-200 hover:bg-gray-50"
+                }`}
+              >
                 <RadioGroupItem value="science" id="science" />
-                <Label htmlFor="science" className="font-medium">
-                  Science (PCM/PCB)
-                </Label>
+                <div>
+                  <Label htmlFor="science" className="font-medium">Science</Label>
+                  <p className="text-sm text-gray-600">Choose PCM or PCB below</p>
+                </div>
               </div>
-              <div className="flex items-center space-x-3 p-3 border border-gray-200 rounded-lg">
+              <div
+                role="button"
+                onClick={() => updateData({ stream: "commerce" as any })}
+                className={`flex items-center space-x-3 p-3 rounded-lg cursor-pointer border transition-colors ${
+                  data.stream === "commerce" ? "border-blue-500 bg-blue-50" : "border-gray-200 hover:bg-gray-50"
+                }`}
+              >
                 <RadioGroupItem value="commerce" id="commerce" />
                 <Label htmlFor="commerce" className="font-medium">
                   Commerce
                 </Label>
               </div>
-              <div className="flex items-center space-x-3 p-3 border border-gray-200 rounded-lg">
+              <div
+                role="button"
+                onClick={() => updateData({ stream: "arts" as any })}
+                className={`flex items-center space-x-3 p-3 rounded-lg cursor-pointer border transition-colors ${
+                  data.stream === "arts" ? "border-blue-500 bg-blue-50" : "border-gray-200 hover:bg-gray-50"
+                }`}
+              >
                 <RadioGroupItem value="arts" id="arts" />
                 <Label htmlFor="arts" className="font-medium">
                   Arts/Humanities
@@ -91,6 +126,30 @@ export function EducationStep() {
               </div>
             </div>
           </RadioGroup>
+          {data.stream === "science" && (
+            <div className="mt-3 grid grid-cols-2 gap-3">
+              <div
+                role="button"
+                onClick={() => updateData({ scienceSpecialization: "pcm" as any })}
+                className={`flex items-center space-x-2 p-2 rounded-lg cursor-pointer border transition-colors ${
+                  data.scienceSpecialization === "pcm" ? "border-blue-500 bg-blue-50" : "border-gray-200 hover:bg-gray-50"
+                }`}
+              >
+                <span className="h-3 w-3 rounded-full border border-gray-400 inline-block mr-2 bg-white" />
+                <span className="text-sm">PCM (Physics, Chemistry, Math)</span>
+              </div>
+              <div
+                role="button"
+                onClick={() => updateData({ scienceSpecialization: "pcb" as any })}
+                className={`flex items-center space-x-2 p-2 rounded-lg cursor-pointer border transition-colors ${
+                  data.scienceSpecialization === "pcb" ? "border-blue-500 bg-blue-50" : "border-gray-200 hover:bg-gray-50"
+                }`}
+              >
+                <span className="h-3 w-3 rounded-full border border-gray-400 inline-block mr-2 bg-white" />
+                <span className="text-sm">PCB (Physics, Chemistry, Biology)</span>
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="grid grid-cols-2 gap-6">
@@ -122,13 +181,75 @@ export function EducationStep() {
             </Select>
           </div>
         </div>
+
+        {/* Conditional exam scores based on stream/specialization */}
+        {data.stream === "science" && data.scienceSpecialization === "pcm" && (
+          <div className="grid grid-cols-2 gap-6 mt-6">
+            <div className="space-y-2">
+              <Label htmlFor="jeeMainsScore" className="text-sm font-medium text-gray-700">
+                JEE Mains Percentile
+              </Label>
+              <Input
+                id="jeeMainsScore"
+                placeholder="e.g., 92"
+                value={String(data.jeeMainsScore ?? "")}
+                onChange={(e) => updateData({ jeeMainsScore: Number(e.target.value) || 0 })}
+                className="h-12"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="jeeAdvancedScore" className="text-sm font-medium text-gray-700">
+                JEE Advanced Percentile (optional)
+              </Label>
+              <Input
+                id="jeeAdvancedScore"
+                placeholder="e.g., 85"
+                value={String(data.jeeAdvancedScore ?? "")}
+                onChange={(e) => updateData({ jeeAdvancedScore: Number(e.target.value) || 0 })}
+                className="h-12"
+              />
+            </div>
+          </div>
+        )}
+        {(data.stream === "science" && data.scienceSpecialization === "pcb") || data.stream === "medical" ? (
+          <div className="grid grid-cols-2 gap-6 mt-6">
+            <div className="space-y-2">
+              <Label htmlFor="neetScore" className="text-sm font-medium text-gray-700">
+                NEET Percentile
+              </Label>
+              <Input
+                id="neetScore"
+                placeholder="e.g., 70"
+                value={String(data.neetScore ?? "")}
+                onChange={(e) => updateData({ neetScore: Number(e.target.value) || 0 })}
+                className="h-12"
+              />
+            </div>
+          </div>
+        ) : null}
+        {data.stream === "commerce" || data.stream === "arts" ? (
+          <div className="grid grid-cols-2 gap-6 mt-6">
+            <div className="space-y-2">
+              <Label htmlFor="cuetScore" className="text-sm font-medium text-gray-700">
+                CUET Percentile (if applicable)
+              </Label>
+              <Input
+                id="cuetScore"
+                placeholder="e.g., 80"
+                value={String(data.cuetScore ?? "")}
+                onChange={(e) => updateData({ cuetScore: Number(e.target.value) || 0 })}
+                className="h-12"
+              />
+            </div>
+          </div>
+        ) : null}
       </div>
 
       <div className="flex justify-between items-center mt-8 max-w-2xl mx-auto">
         <Button variant="ghost" onClick={handlePrevious} className="text-gray-500">
           ← Previous
         </Button>
-        <Button onClick={handleNext} disabled={!isValid} className="bg-gray-800 hover:bg-gray-700 text-white px-6">
+        <Button onClick={handleNext} className="bg-gray-800 hover:bg-gray-700 text-white px-6">
           Continue →
         </Button>
       </div>

@@ -9,9 +9,7 @@ export function PersonalInfoStep() {
   const { data, updateData, setCurrentStep } = useQuestionnaire()
 
   const handleNext = () => {
-    if (data.fullName && data.phoneNumber && data.emailAddress) {
-      setCurrentStep(2)
-    }
+    setCurrentStep(2)
   }
 
   const isValid = data.fullName && data.phoneNumber && data.emailAddress
@@ -70,7 +68,7 @@ export function PersonalInfoStep() {
         <Button variant="ghost" className="text-gray-500" disabled>
           Previous
         </Button>
-        <Button onClick={handleNext} disabled={!isValid} className="bg-gray-800 hover:bg-gray-700 text-white px-6">
+        <Button onClick={handleNext} className="bg-gray-800 hover:bg-gray-700 text-white px-6">
           Continue →
         </Button>
       </div>

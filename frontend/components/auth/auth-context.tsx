@@ -23,9 +23,9 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined)
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [isLoading, setIsLoading] = useState(true)
+  const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "https://aura-labs.onrender.com"
 
   useEffect(() => {
-    // Check for existing session on mount
     const savedUser = localStorage.getItem("futurepath_user")
     if (savedUser) {
       setUser(JSON.parse(savedUser))
@@ -36,19 +36,29 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const login = async (email: string, password: string): Promise<boolean> => {
     setIsLoading(true)
     try {
-      // Simulate API call - replace with actual authentication
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      const response = await fetch(`${apiBaseUrl}/auth/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password, authMethod: "local" }),
+      })
 
-      // Mock successful login
-      const mockUser: User = {
-        id: "1",
-        email,
-        name: email.split("@")[0],
+      if (!response.ok) {
+        setIsLoading(false)
+        return false
+      }
+
+      const data = await response.json()
+
+      const loggedInUser: User = {
+        id: data.user.id,
+        email: data.user.email,
+        name: data.user.name,
         educationLevel: null,
       }
 
-      setUser(mockUser)
-      localStorage.setItem("futurepath_user", JSON.stringify(mockUser))
+      setUser(loggedInUser)
+      localStorage.setItem("futurepath_user", JSON.stringify(loggedInUser))
+      localStorage.setItem("futurepath_token", data.token)
       setIsLoading(false)
       return true
     } catch (error) {
@@ -60,19 +70,29 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const signup = async (email: string, password: string, name: string): Promise<boolean> => {
     setIsLoading(true)
     try {
-      // Simulate API call - replace with actual authentication
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      const response = await fetch(`${apiBaseUrl}/auth/signup`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password, authMethod: "local" }),
+      })
 
-      // Mock successful signup
-      const mockUser: User = {
-        id: Date.now().toString(),
-        email,
-        name,
+      if (!response.ok) {
+        setIsLoading(false)
+        return false
+      }
+
+      const data = await response.json()
+
+      const createdUser: User = {
+        id: data.user.id,
+        email: data.user.email,
+        name: data.user.name,
         educationLevel: null,
       }
 
-      setUser(mockUser)
-      localStorage.setItem("futurepath_user", JSON.stringify(mockUser))
+      setUser(createdUser)
+      localStorage.setItem("futurepath_user", JSON.stringify(createdUser))
+      localStorage.setItem("futurepath_token", data.token)
       setIsLoading(false)
       return true
     } catch (error) {
@@ -84,6 +104,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const logout = () => {
     setUser(null)
     localStorage.removeItem("futurepath_user")
+    localStorage.removeItem("futurepath_token")
   }
 
   return <AuthContext.Provider value={{ user, login, signup, logout, isLoading }}>{children}</AuthContext.Provider>

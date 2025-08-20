@@ -39,7 +39,7 @@ export function QuestionnaireProvider({ children }: { children: React.ReactNode 
     setData((prev) => ({ ...prev, ...updates }))
   }
 
-  const isComplete = currentStep > 4
+  const isComplete = currentStep > 3
 
   const resetQuestionnaire = () => {
     setData(initialData)
