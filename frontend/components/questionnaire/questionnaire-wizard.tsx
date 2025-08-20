@@ -1,7 +1,6 @@
 "use client"
 
 import { ProgressIndicator } from "./progress-indicator"
-import { PersonalInfoStep } from "./steps/personal-info-step"
 import { EducationStep } from "./steps/education-step"
 import { InterestsStep } from "./steps/interests-step"
 import { PreferencesStep } from "./steps/preferences-step"
@@ -13,22 +12,20 @@ export function QuestionnaireWizard() {
   const renderStep = () => {
     switch (currentStep) {
       case 1:
-        return <PersonalInfoStep />
-      case 2:
         return <EducationStep />
-      case 3:
+      case 2:
         return <InterestsStep />
-      case 4:
+      case 3:
         return <PreferencesStep />
       default:
-        return <PersonalInfoStep />
+        return <EducationStep />
     }
   }
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4">
       <div className="container mx-auto max-w-4xl">
-        <ProgressIndicator currentStep={currentStep} totalSteps={4} />
+        <ProgressIndicator currentStep={currentStep} totalSteps={3} />
         {renderStep()}
       </div>
     </div>

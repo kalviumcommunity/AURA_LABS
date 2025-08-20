@@ -51,9 +51,7 @@ export function InterestsStep() {
   const { data, updateData, setCurrentStep } = useQuestionnaire()
 
   const handleNext = () => {
-    if (data.interests.length > 0 && data.careerAspirations.length > 0) {
-      setCurrentStep(4)
-    }
+    setCurrentStep(4)
   }
 
   const handleBack = () => {
@@ -133,7 +131,7 @@ export function InterestsStep() {
         <Button variant="ghost" onClick={handleBack} className="text-gray-500">
           ← Previous
         </Button>
-        <Button onClick={handleNext} disabled={!isValid} className="bg-gray-800 hover:bg-gray-700 text-white px-6">
+        <Button onClick={handleNext} className="bg-gray-800 hover:bg-gray-700 text-white px-6">
           Continue →
         </Button>
       </div>

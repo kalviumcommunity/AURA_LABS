@@ -6,10 +6,11 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowLeft, Loader2, Filter } from "lucide-react"
 import { RecommendationCard } from "@/components/recommendations/recommendation-card"
-import { recommendationEngine } from "@/lib/recommendation-engine"
-import type { Recommendation, QuestionnaireData } from "@/types/university"
+import type { Recommendation } from "@/types/university"
+import type { QuestionnaireData } from "@/types/questionnaire"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import { getBackendRecommendations } from "@/lib/backend"
 
 export default function RecommendationsPage() {
   const { user } = useAuth()
@@ -37,8 +38,77 @@ export default function RecommendationsPage() {
       }
 
       const questionnaireData: QuestionnaireData = JSON.parse(savedData)
-      const results = await recommendationEngine.generateRecommendations(questionnaireData)
-      setRecommendations(results)
+      console.log("[Recommendations] Loaded questionnaire data:", questionnaireData)
+
+      const apiResult = await getBackendRecommendations(questionnaireData)
+      console.log("[Recommendations] Backend result:", apiResult)
+
+      // Optional: augment with metadata so fees/placements are not blank
+      let metaIndex: Record<string, any> = {}
+      try {
+        const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "https://aura-labs.onrender.com"
+        const metaRes = await fetch(`${baseUrl}/api/metadata/universities/meta`)
+        const metaJson = await metaRes.json()
+        metaIndex = Array.isArray(metaJson.universities)
+          ? Object.fromEntries(metaJson.universities.map((u: any) => [String(u.name).toLowerCase(), u]))
+          : {}
+        console.log("[Recommendations] Loaded meta for", Object.keys(metaIndex).length, "universities")
+      } catch (e) {
+        console.warn("[Recommendations] Could not load meta", e)
+      }
+
+      const transformed: Recommendation[] = (apiResult?.recommendations || []).map((rec: any, index: number) => {
+        const match = typeof rec.overall_score === "number" ? Math.max(0, Math.min(rec.overall_score / 100, 1)) : 0.6
+        const admission = String(rec.admission_probability || "Medium").toLowerCase()
+        const eligibility: "eligible" | "borderline" | "not-eligible" = admission.includes("high")
+          ? "eligible"
+          : admission.includes("low")
+          ? "not-eligible"
+          : "borderline"
+
+        const meta = rec.name ? metaIndex[String(rec.name).toLowerCase()] : undefined
+        const annual = meta?.annual_fees ?? 0
+        const placementRate = meta?.placement_rate ?? 0
+        const avgPackage = meta?.median_package ? `₹${(meta.median_package / 100000).toFixed(1)}L` : "-"
+
+        return {
+          university: {
+            id: String(rec.id || index),
+            name: String(rec.name || "Unknown University"),
+            location: { city: meta?.city || "", state: meta?.state || "", type: "metro" },
+            type: "private",
+            ranking: {},
+            courses: [],
+            facilities: [],
+            placements: {
+              averagePackage: avgPackage,
+              highestPackage: "-",
+              placementRate: placementRate,
+              topRecruiters: [],
+            },
+            fees: { annual: annual, total: annual, currency: "INR" },
+            eligibility: { minimumPercentage: 0, entranceExams: [], streamRequirements: [] },
+            mode: ["regular"],
+            established: 0,
+            accreditation: [],
+          },
+          course: {
+            id: "recommended",
+            name: "Recommended Program",
+            degree: "Other",
+            duration: "-",
+            careerPaths: [],
+          },
+          matchScore: match,
+          reasoning: rec.why_this_college ? [rec.why_this_college] : [],
+          pros: Array.isArray(rec.pros) ? rec.pros : [],
+          cons: Array.isArray(rec.cons) ? rec.cons : [],
+          eligibilityStatus: eligibility,
+          scholarshipOpportunities: [],
+        }
+      })
+
+      setRecommendations(transformed)
     } catch (err) {
       setError("Failed to generate recommendations. Please try again.")
       console.error("Recommendation error:", err)
