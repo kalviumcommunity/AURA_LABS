@@ -1,0 +1,263 @@
+import type { CareerPath } from "@/types/career-path"
+
+export const careerPaths: CareerPath[] = [
+  {
+    id: "software-engineer",
+    title: "Software Engineer",
+    field: "Technology",
+    description: "Design, develop, and maintain software applications and systems",
+    averageSalary: "₹8-25 LPA",
+    growthRate: "22% (Much faster than average)",
+    keySkills: ["Programming", "Problem Solving", "System Design", "Teamwork"],
+    workEnvironment: "Office/Remote",
+    jobOutlook: "excellent",
+    steps: [
+      {
+        id: "step1",
+        title: "Complete 12th Grade (Science/PCM)",
+        description: "Focus on Mathematics, Physics, and Computer Science",
+        duration: "2 years",
+        type: "education",
+        requirements: ["Strong math foundation", "Basic programming knowledge"],
+      },
+      {
+        id: "step2",
+        title: "Engineering Entrance Exams",
+        description: "Prepare for and clear JEE Main/Advanced or state-level exams",
+        duration: "1 year",
+        type: "milestone",
+        requirements: ["JEE preparation", "Good problem-solving skills"],
+      },
+      {
+        id: "step3",
+        title: "B.Tech in Computer Science/IT",
+        description: "Pursue undergraduate degree in computer science or related field",
+        duration: "4 years",
+        type: "education",
+        skills: ["Data Structures", "Algorithms", "Programming Languages", "Software Engineering"],
+      },
+      {
+        id: "step4",
+        title: "Internships & Projects",
+        description: "Gain practical experience through internships and personal projects",
+        duration: "1-2 years",
+        type: "experience",
+        skills: ["Real-world coding", "Team collaboration", "Industry exposure"],
+      },
+      {
+        id: "step5",
+        title: "Entry-Level Software Developer",
+        description: "Start career as junior developer or software engineer",
+        duration: "2-3 years",
+        type: "milestone",
+        skills: ["Professional coding", "Code reviews", "Agile methodologies"],
+      },
+      {
+        id: "step6",
+        title: "Senior Software Engineer",
+        description: "Advance to senior roles with leadership responsibilities",
+        duration: "3-5 years",
+        type: "milestone",
+        skills: ["System architecture", "Mentoring", "Technical leadership"],
+      },
+    ],
+    alternativePaths: ["data-scientist", "product-manager", "tech-entrepreneur"],
+  },
+  {
+    id: "doctor",
+    title: "Medical Doctor",
+    field: "Healthcare",
+    description: "Diagnose and treat patients, promote health and prevent disease",
+    averageSalary: "₹10-50 LPA",
+    growthRate: "7% (Faster than average)",
+    keySkills: ["Medical Knowledge", "Patient Care", "Critical Thinking", "Communication"],
+    workEnvironment: "Hospitals/Clinics",
+    jobOutlook: "excellent",
+    steps: [
+      {
+        id: "step1",
+        title: "Complete 12th Grade (Science/PCB)",
+        description: "Focus on Physics, Chemistry, and Biology",
+        duration: "2 years",
+        type: "education",
+        requirements: ["Strong science foundation", "High academic performance"],
+      },
+      {
+        id: "step2",
+        title: "NEET Preparation & Exam",
+        description: "Prepare for and clear NEET for medical college admission",
+        duration: "1-2 years",
+        type: "milestone",
+        requirements: ["NEET qualification", "High percentile score"],
+      },
+      {
+        id: "step3",
+        title: "MBBS Degree",
+        description: "Complete Bachelor of Medicine and Bachelor of Surgery",
+        duration: "5.5 years",
+        type: "education",
+        skills: ["Medical sciences", "Clinical skills", "Patient interaction", "Medical ethics"],
+      },
+      {
+        id: "step4",
+        title: "Internship",
+        description: "Complete mandatory rotating internship in various departments",
+        duration: "1 year",
+        type: "experience",
+        skills: ["Practical medicine", "Hospital procedures", "Patient management"],
+      },
+      {
+        id: "step5",
+        title: "Medical Practice/Specialization",
+        description: "Start practice or pursue MD/MS for specialization",
+        duration: "3+ years",
+        type: "milestone",
+        skills: ["Specialized knowledge", "Advanced procedures", "Research"],
+      },
+    ],
+    alternativePaths: ["medical-researcher", "healthcare-administrator", "public-health-specialist"],
+  },
+  {
+    id: "data-scientist",
+    title: "Data Scientist",
+    field: "Technology/Analytics",
+    description: "Analyze complex data to help organizations make informed decisions",
+    averageSalary: "₹12-30 LPA",
+    growthRate: "31% (Much faster than average)",
+    keySkills: ["Statistics", "Programming", "Machine Learning", "Data Visualization"],
+    workEnvironment: "Office/Remote",
+    jobOutlook: "excellent",
+    steps: [
+      {
+        id: "step1",
+        title: "Complete 12th Grade (Science/Math)",
+        description: "Strong foundation in Mathematics and Statistics",
+        duration: "2 years",
+        type: "education",
+        requirements: ["Advanced mathematics", "Statistical thinking"],
+      },
+      {
+        id: "step2",
+        title: "Bachelor's Degree",
+        description: "B.Tech/B.Sc in Computer Science, Statistics, or Mathematics",
+        duration: "3-4 years",
+        type: "education",
+        skills: ["Programming", "Statistics", "Linear Algebra", "Calculus"],
+      },
+      {
+        id: "step3",
+        title: "Learn Data Science Tools",
+        description: "Master Python/R, SQL, and data science libraries",
+        duration: "6-12 months",
+        type: "certification",
+        skills: ["Python/R", "SQL", "Pandas", "NumPy", "Scikit-learn"],
+      },
+      {
+        id: "step4",
+        title: "Data Science Projects",
+        description: "Build portfolio with real-world data science projects",
+        duration: "6-12 months",
+        type: "experience",
+        skills: ["Data cleaning", "Model building", "Data visualization", "Storytelling"],
+      },
+      {
+        id: "step5",
+        title: "Entry-Level Data Analyst/Scientist",
+        description: "Start career in data analysis or junior data scientist role",
+        duration: "2-3 years",
+        type: "milestone",
+        skills: ["Business analytics", "A/B testing", "Reporting", "Stakeholder communication"],
+      },
+      {
+        id: "step6",
+        title: "Senior Data Scientist",
+        description: "Advance to senior roles with complex projects and team leadership",
+        duration: "3-5 years",
+        type: "milestone",
+        skills: ["Advanced ML", "Deep learning", "Team leadership", "Strategy"],
+      },
+    ],
+    alternativePaths: ["machine-learning-engineer", "business-analyst", "ai-researcher"],
+  },
+  {
+    id: "chartered-accountant",
+    title: "Chartered Accountant",
+    field: "Finance/Accounting",
+    description: "Provide financial advice, auditing, and accounting services",
+    averageSalary: "₹8-25 LPA",
+    growthRate: "6% (As fast as average)",
+    keySkills: ["Accounting", "Financial Analysis", "Taxation", "Auditing"],
+    workEnvironment: "Office/Client sites",
+    jobOutlook: "good",
+    steps: [
+      {
+        id: "step1",
+        title: "Complete 12th Grade (Commerce)",
+        description: "Focus on Accountancy, Business Studies, and Economics",
+        duration: "2 years",
+        type: "education",
+        requirements: ["Commerce background", "Good mathematical skills"],
+      },
+      {
+        id: "step2",
+        title: "CA Foundation",
+        description: "Clear CA Foundation exam after 12th grade",
+        duration: "6-12 months",
+        type: "milestone",
+        requirements: ["CA Foundation qualification", "Basic accounting knowledge"],
+      },
+      {
+        id: "step3",
+        title: "CA Intermediate",
+        description: "Complete CA Intermediate level with articleship training",
+        duration: "2-3 years",
+        type: "education",
+        skills: ["Advanced accounting", "Taxation", "Auditing", "Corporate law"],
+      },
+      {
+        id: "step4",
+        title: "Articleship Training",
+        description: "Complete 3 years of practical training under practicing CA",
+        duration: "3 years",
+        type: "experience",
+        skills: ["Practical accounting", "Client interaction", "Professional ethics"],
+      },
+      {
+        id: "step5",
+        title: "CA Final",
+        description: "Clear CA Final exam to become qualified Chartered Accountant",
+        duration: "1-2 years",
+        type: "milestone",
+        skills: ["Advanced taxation", "Financial reporting", "Strategic management"],
+      },
+      {
+        id: "step6",
+        title: "Professional Practice",
+        description: "Start independent practice or join corporate sector",
+        duration: "Ongoing",
+        type: "milestone",
+        skills: ["Client management", "Business development", "Specialized services"],
+      },
+    ],
+    alternativePaths: ["financial-analyst", "tax-consultant", "corporate-finance"],
+  },
+]
+
+export function getCareerPathsByField(field: string): CareerPath[] {
+  return careerPaths.filter(
+    (path) =>
+      path.field.toLowerCase().includes(field.toLowerCase()) ||
+      path.keySkills.some((skill) => skill.toLowerCase().includes(field.toLowerCase())),
+  )
+}
+
+export function getCareerPathsByInterests(interests: string[]): CareerPath[] {
+  return careerPaths.filter((path) =>
+    interests.some(
+      (interest) =>
+        path.keySkills.some((skill) => skill.toLowerCase().includes(interest.toLowerCase())) ||
+        path.field.toLowerCase().includes(interest.toLowerCase()) ||
+        path.title.toLowerCase().includes(interest.toLowerCase()),
+    ),
+  )
+}
