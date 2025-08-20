@@ -102,7 +102,7 @@ export const getRecommendations = async (req, res) => {
     }
 
     // Read and parse the universities.json file
-    const universitiesPath = path.join(__dirname, '..', '..', 'data', 'universities.json');
+    const universitiesPath = path.join(__dirname, '..', 'data', 'universities.json');
     const universitiesData = await fs.readFile(universitiesPath, 'utf8');
     const universities = JSON.parse(universitiesData);
 
