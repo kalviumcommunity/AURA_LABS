@@ -38,6 +38,13 @@ export function Header() {
           {user ? (
             <div className="flex items-center space-x-4">
               <span className="text-sm text-muted-foreground">Welcome, {user.name}</span>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => (window as any).botpressWebChat?.sendEvent({ type: "show" })}
+              >
+                Chat
+              </Button>
               <Button variant="outline" size="sm" onClick={logout}>
                 Logout
               </Button>

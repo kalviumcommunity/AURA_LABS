@@ -2,15 +2,26 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Target, BookOpen, MessageCircle, TrendingUp, Shield, BarChart3 } from "lucide-react"
+import { Target, BookOpen, MessageCircle, TrendingUp, Shield, BarChart3, User, LogOut } from "lucide-react"
 import { useAuth } from "@/components/auth/auth-context"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 export default function HomePage() {
-  const { user } = useAuth()
+  const { user, logout } = useAuth()
+  const router = useRouter()
+
+  const handleLogout = () => {
+    logout()
+    router.push("/")
+  }
 
   return (
     <div className="min-h-screen bg-background">
+      
+
+      
+
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto">
@@ -27,7 +38,7 @@ export default function HomePage() {
                 {user ? (
                   <Link href="/questionnaire">
                     <Button size="lg" className="text-lg px-8 py-3 bg-blue-600 hover:bg-blue-700">
-                      Get Started
+                      Take Assessment
                     </Button>
                   </Link>
                 ) : (
@@ -37,11 +48,13 @@ export default function HomePage() {
                     </Button>
                   </Link>
                 )}
-                <Link href="/login">
-                  <Button variant="outline" size="lg" className="text-lg px-8 py-3 bg-transparent">
-                    Login/Signup
-                  </Button>
-                </Link>
+                {!user && (
+                  <Link href="/login">
+                    <Button variant="outline" size="lg" className="text-lg px-8 py-3 bg-transparent">
+                      Already have an account? Login
+                    </Button>
+                  </Link>
+                )}
               </div>
             </div>
             <div className="flex justify-center">
@@ -55,30 +68,60 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Statistics Section */}
-      <section className="py-12 px-4">
-        <div className="container mx-auto">
-          <div className="flex items-center justify-between max-w-4xl mx-auto">
-            <div className="flex-1">
-              <p className="text-3xl font-bold text-foreground">platform provides everything</p>
+      {/* Quick Actions for Logged-in Users */}
+      {user && (
+        <section className="py-12 px-4 bg-gray-50">
+          <div className="container mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-foreground mb-2">Quick Actions</h2>
+              <p className="text-muted-foreground">Continue your journey with these quick actions</p>
             </div>
-            <div className="flex gap-6 ml-8">
-              <div className="bg-gray-100 border border-gray-300 px-6 py-3 rounded-lg">
-                <div className="font-semibold text-black">1000+</div>
-                <div className="text-sm text-gray-600">university</div>
-              </div>
-              <div className="bg-gray-100 border border-gray-300 px-6 py-3 rounded-lg">
-                <div className="font-semibold text-black">500+</div>
-                <div className="text-sm text-gray-600">Career Paths</div>
-              </div>
-              <div className="bg-gray-100 border border-gray-300 px-6 py-3 rounded-lg">
-                <div className="font-semibold text-black">24/7</div>
-                <div className="text-sm text-gray-600">AI Support</div>
-              </div>
+            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <Link href="/questionnaire">
+                <Card className="border border-gray-200 p-6 hover:shadow-lg transition-shadow cursor-pointer text-center">
+                  <CardHeader className="p-0">
+                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Target className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <CardTitle className="text-lg">Take Assessment</CardTitle>
+                    <CardDescription className="text-sm text-muted-foreground">
+                      Complete or retake your assessment for better recommendations
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+              <Link href="/recommendations">
+                <Card className="border border-gray-200 p-6 hover:shadow-lg transition-shadow cursor-pointer text-center">
+                  <CardHeader className="p-0">
+                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <BookOpen className="h-6 w-6 text-green-600" />
+                    </div>
+                    <CardTitle className="text-lg">View Recommendations</CardTitle>
+                    <CardDescription className="text-sm text-muted-foreground">
+                      See your personalized university recommendations
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+              <Link href="/chat">
+                <Card className="border border-gray-200 p-6 hover:shadow-lg transition-shadow cursor-pointer text-center">
+                  <CardHeader className="p-0">
+                    <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <MessageCircle className="h-6 w-6 text-purple-600" />
+                    </div>
+                    <CardTitle className="text-lg">AI Counsellor</CardTitle>
+                    <CardDescription className="text-sm text-muted-foreground">
+                      Chat with our AI for instant guidance and support
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      
 
       {/* Why Choose AURA Section */}
       <section className="py-20 px-4">
@@ -182,15 +225,38 @@ export default function HomePage() {
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <div className="bg-gradient-to-r from-gray-900 to-black rounded-2xl p-12 text-center text-white">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Discover Your Path?</h2>
-            <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-              Join thousands of students who have found their perfect university and career match with AURA.
-            </p>
-            <Link href="/questionnaire">
-              <Button size="lg" variant="secondary" className="text-lg px-8 py-3 bg-white text-black hover:bg-gray-100">
-                Get Started Now →
-              </Button>
-            </Link>
+            {user ? (
+              <>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Discover Your Path?</h2>
+                <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
+                  Complete your assessment to get personalized university recommendations and career guidance.
+                </p>
+                <Link href="/questionnaire">
+                  <Button size="lg" variant="secondary" className="text-lg px-8 py-3 bg-white text-black hover:bg-gray-100">
+                    Take Assessment Now →
+                  </Button>
+                </Link>
+              </>
+            ) : (
+              <>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Discover Your Path?</h2>
+                <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
+                  Join thousands of students who have found their perfect university and career match with AURA.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link href="/signup">
+                    <Button size="lg" variant="secondary" className="text-lg px-8 py-3 bg-white text-black hover:bg-gray-100">
+                      Get Started Now →
+                    </Button>
+                  </Link>
+                  <Link href="/login">
+                    <Button size="lg" variant="outline" className="text-lg px-8 py-3 bg-transparent text-white border-white hover:bg-white hover:text-black">
+                      Already have an account? Login
+                    </Button>
+                  </Link>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </section>

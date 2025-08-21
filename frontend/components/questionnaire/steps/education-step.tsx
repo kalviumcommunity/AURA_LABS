@@ -18,7 +18,7 @@ export function EducationStep() {
     setCurrentStep(1)
   }
 
-  const isValid = data.educationLevel && data.stream && data.completionYear && data.percentage
+  const isValid = data.educationLevel && data.stream && data.percentage
 
   return (
     <div className="bg-white border border-gray-300 rounded-lg p-8 mt-6">
@@ -165,21 +165,7 @@ export function EducationStep() {
               className="h-12"
             />
           </div>
-          <div className="space-y-2">
-            <Label className="text-sm font-medium text-gray-700">Year of Completion *</Label>
-            <Select value={data.completionYear} onValueChange={(value) => updateData({ completionYear: value })}>
-              <SelectTrigger className="h-12">
-                <SelectValue placeholder="Select year" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="2024">2024</SelectItem>
-                <SelectItem value="2023">2023</SelectItem>
-                <SelectItem value="2022">2022</SelectItem>
-                <SelectItem value="2021">2021</SelectItem>
-                <SelectItem value="2020">2020</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+
         </div>
 
         {/* Conditional exam scores based on stream/specialization */}
