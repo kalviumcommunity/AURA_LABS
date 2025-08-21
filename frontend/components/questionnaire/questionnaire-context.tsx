@@ -16,7 +16,6 @@ interface QuestionnaireContextType {
 const initialData: QuestionnaireData = {
   educationLevel: "",
   stream: "",
-  completionYear: "",
   percentage: "",
   interests: [],
   careerAspirations: [],

@@ -8,7 +8,6 @@ export interface QuestionnaireData {
   stream: "science" | "commerce" | "arts" | "vocational" | "engineering" | "medical" | "other" | ""
   // For science stream, capture specialization to differentiate PCM vs PCB
   scienceSpecialization?: "pcm" | "pcb"
-  completionYear: string
   percentage: string
   // Conditional exam scores captured by specialization/stream
   jeeMainsScore?: number

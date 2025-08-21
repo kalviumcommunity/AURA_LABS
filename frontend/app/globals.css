@@ -121,3 +121,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Fallback variables for html2canvas/jspdf which don't support oklch() parsing */
+.pdf-safe {
+  --background: #ffffff;
+  --foreground: #111827; /* gray-900 */
+  --card: #f9fafb; /* gray-50 */
+  --muted: #f3f4f6; /* gray-100 */
+  --primary: #111827;
+  --secondary: #e5e7eb; /* gray-200 */
+  --border: #e5e7eb;
+  --ring: #111827;
+}

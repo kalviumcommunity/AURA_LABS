@@ -39,11 +39,22 @@ export function mapQuestionnaireToBackendPayload(questionnaireData: any) {
     weaknesses: [],
   };
 
+  const inferProgramFromStream = (): string[] => {
+    const stream = questionnaireData?.stream
+    const spec = questionnaireData?.scienceSpecialization
+    if (stream === "science" && spec === "pcm") return ["Engineering"]
+    if (stream === "science" && spec === "pcb") return ["Medical"]
+    if (stream === "medical") return ["Medical"]
+    if (stream === "commerce") return ["Commerce"]
+    if (stream === "arts") return ["Arts"]
+    return ["Engineering", "Science", "General"]
+  }
+
   const preferences = {
     desired_programs:
       Array.isArray(questionnaireData?.interests) && questionnaireData.interests.length > 0
         ? questionnaireData.interests
-        : ["Engineering"],
+        : inferProgramFromStream(),
     location_preferences: questionnaireData?.preferredLocation || [],
     college_type: ["Government", "Private"],
     campus_life_importance: "Medium",

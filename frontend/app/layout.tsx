@@ -5,6 +5,8 @@ import { AuthProvider } from "@/components/auth/auth-context"
 import { QuestionnaireProvider } from "@/components/questionnaire/questionnaire-context"
 import { ComparisonProvider } from "@/components/comparison/comparison-context"
 import { ChatProvider } from "@/components/chat/chat-context"
+import { BotpressWidget } from "@/components/chat/botpress-widget"
+import { ChatFab } from "@/components/chat/chat-fab"
 import { Header } from "@/components/layout/header"
 import { ComparisonFloatingBar } from "@/components/comparison/comparison-floating-bar"
 import "./globals.css"
@@ -44,8 +46,10 @@ html {
             <ComparisonProvider>
               <ChatProvider>
                 <Header />
+                <BotpressWidget shareUrl="https://cdn.botpress.cloud/webchat/v3.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/08/21/07/20250821073203-WFETDMD8.json" />
                 {children}
                 <ComparisonFloatingBar />
+                <ChatFab />
               </ChatProvider>
             </ComparisonProvider>
           </QuestionnaireProvider>

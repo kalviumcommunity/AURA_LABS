@@ -50,8 +50,7 @@ export function CompletionStep() {
               <Badge variant="secondary">{data.stream}</Badge>
             </div>
             <div className="flex justify-between">
-              <span className="text-muted-foreground">Year:</span>
-              <span>{data.completionYear}</span>
+              
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">Score:</span>
